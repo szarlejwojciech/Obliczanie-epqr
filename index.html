@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Obliczanie EPQ-R</title>
+
+  </head>
+
+  <body>
+    <div class="app">
+      <header>
+        <h1>Obliczanie wyników EPQ-R</h1>
+      </header>
+
+      <main>
+        <section>
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select">
+            <div class="age-group">
+              <select name="people-group" id="people-group">
+                <option value="students">Studenci</option>
+                <option value="emerits">Emeryci</option>
+                <option value="grow">Doreśli</option>
+              </select></div>
+            <div class="gender">
+              <input type="radio" name="gender" id="male" value="male" checked>
+              <label for="male">męszczyźni</label>
+              <input type="radio" name="gender" id="female" value="female">
+              <label for="female">kobiety</label>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Zaznacz odpowiedzi:</h3>
+          <div class="answers">
+          </div>
+          <div class="legend">
+            <span>* klikając na jakąś odpowiedź masz do wyboru:</span>
+            <span class="yes">- tak</span>
+            <span class="no">- nie</span>
+            <span class="default">- nie zaznaczono</span>
+          </div>
+          <div class="buttons">
+            <button id="result">Oblicz</button><button id="reset">Resetuj</button>
+          </div>
+        </section>
+        <section class="previev">
+          <h3>Podgląd:</h3>
+          <div class="container">
+            <div>
+              <h4>Psyhotyzm</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="psyhotyzm-positive"></ul>
+                </ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="psyhotyzm-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Neurotyczność</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="neuroticism-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="neuroticism-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Ekstrawersja</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="extroversion-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="extroversion-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Skala kłamstwa</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="lie-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="lie-negative"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+
+
+      <script src="main.js">
+
+
+
+      </script>
+    </div>
+  </body>
+
+</html>
