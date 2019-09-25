@@ -16,13 +16,20 @@ body {
 .app {
   width: 90vw;
   max-width: 800px;
-  margin: 80px auto;
+  margin: 30px auto;
+  padding-bottom: 60px;
 }
 
 .app h1 {
   font-size: 40px;
   font-weight: 600;
   letter-spacing: -1px;
+}
+
+.app .test-info {
+  color: red;
+  margin: -5px 0;
+  font-size: 14px;
 }
 
 .app section {
@@ -218,6 +225,16 @@ body {
 
 .app section .buttons {
   margin-top: 27px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 15px 0;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  -webkit-box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 -3px 15px rgba(0, 0, 0, 0.1);
 }
 
 .app section .buttons button {
@@ -230,12 +247,43 @@ body {
   border-radius: 60px;
   -webkit-box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
           box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  will-change: transform;
+  -webkit-transition: .15s transform ease-in-out;
+  transition: .15s transform ease-in-out;
+  position: relative;
+}
+
+.app section .buttons button::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  left: 0;
+  top: 0;
+  -webkit-box-shadow: inset 0 20px 20px -15px black;
+          box-shadow: inset 0 20px 20px -15px black;
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: .15s opacity ease-in-out;
+  transition: .15s opacity ease-in-out;
 }
 
 .app section .buttons button#reset {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#FC5D5D), to(#7D0000));
   background-image: linear-gradient(#FC5D5D, #7D0000);
   margin-left: 20px;
+}
+
+.app section .buttons button:hover, .app section .buttons button:focus {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.app section .buttons button:hover::before, .app section .buttons button:focus::before {
+  opacity: .4;
 }
 
 .app .previev .container {
