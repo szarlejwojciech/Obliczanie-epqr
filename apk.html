@@ -5,576 +5,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Obliczanie EPQ-R</title>
-    <style>
-      body {
-        font-family: sans-serif;
 
-      }
-
-      ol {}
-    </style>
   </head>
 
   <body>
+    <div class="app">
+      <header>
+        <h1>Obliczanie wyników EPQ-R</h1>
+      </header>
 
-
-    <!-- <script>
-      const data = [{
-          id: 1,
-          question: "Czy masz wiele różnych hobby?",
-          answer: false
-        },
-        {
-          id: 2,
-          question: "Czy zanim zabierzesz się za cokolwiek, zastanawiasz się nad tym co masz zrobić?",
-          answer: false
-        },
-        {
-          id: 3,
-          question: "Czy często miewasz wahania nastroju?",
-          answer: false
-        },
-        {
-          id: 4,
-          question: "Czy kiedykolwiek przyjąłeś (przyjęłaś) pochwały za coś, o czym wiedziałeś (wiedziałaś), że tak naprawdę było dziełem kogoś innego?",
-          answer: false
-        },
-        {
-          id: 5,
-          question: "Czy zwracasz dużą uwagę na to, co myślą inni ludzie?",
-          answer: false
-        },
-        {
-          id: 6,
-          question: "Czy jesteś osobą gadatliwą?",
-          answer: false
-        },
-        {
-          id: 7,
-          question: "Czy martwiłoby cię posiadanie długów?",
-          answer: false
-        },
-        {
-          id: 8,
-          question: "Czy zdarza ci się czuć „po prostu” bez żadnego powodu?",
-          answer: false
-        },
-        {
-          id: 9,
-          question: "Czy dajesz pieniądze na cele dobroczynne?",
-          answer: false
-        },
-        {
-          id: 10,
-          question: "Czy kiedykolwiek byłeś (byłaś) tak zachłanny (zachłanna), że wziąłeś (wzięłaś) sobie więcej, niż ci się należało?",
-          answer: false
-        },
-        {
-          id: 11,
-          question: "Czy jesteś raczej energiczny (energiczna)?",
-          answer: false
-        },
-        {
-          id: 12,
-          question: "Czy byłbyś (byłabyś) bardzo poruszony (poruszona), widząc cierpienie dziecka lub zwierzęcia?",
-          answer: false
-        },
-        {
-          id: 13,
-          question: "Czy często martwisz się z powodu rzeczy, których nie powinieneś był (nie powinnaś była) zrobić lub powiedzieć?",
-          answer: false
-        },
-        {
-          id: 14,
-          question: "Czy czujesz niechęć do ludzi, którzy nie wiedzą, jak się zachować?",
-          answer: false
-        },
-        {
-          id: 15,
-          question: "Czy jeśli obiecasz, że coś zrobisz, to zawsze dotrzymujesz słowa, bez względu na to, jak bardzo mogłoby to być dla ciebie niewygodne?",
-          answer: false
-        },
-        {
-          id: 16,
-          question: "Czy na wesołej imprezie zwykle umiesz być na luzie i dobrze się bawić?",
-          answer: false
-        },
-        {
-          id: 17,
-          question: "Czy łatwo się irytujesz?",
-          answer: false
-        },
-        {
-          id: 18,
-          question: "Czy ludzie zawsze powinni przestrzegać prawa?",
-          answer: false
-        },
-        {
-          id: 19,
-          question: "Czy zdarzyło ci się obwiniać kogoś o coś, o czym wiedziałeś (wiedziałaś), że w rzeczywistości stało się z twojej winy?",
-          answer: false
-        },
-        {
-          id: 20,
-          question: "Czy lubisz poznawać nowych ludzi?",
-          answer: false
-        },
-        {
-          id: 21,
-          question: "Czy dobre maniery są bardzo ważne?",
-          answer: false
-        },
-        {
-          id: 22,
-          question: "Czy łatwo jest zranić twoje uczucia?",
-          answer: false
-        },
-        {
-          id: 23,
-          question: "Czy wszystkie twoje przyzwyczajenia są dobre i pożądane?",
-          answer: false
-        },
-        {
-          id: 24,
-          question: "Czy na spotkaniach towarzyskich zwykle trzymasz się na uboczu?",
-          answer: false
-        },
-        {
-          id: 25,
-          question: "Czy zażyłbyś (zażyłabyś) środki, które mogą powodować dziwne lub niebezpieczne skutki?",
-          answer: false
-        },
-        {
-          id: 26,
-          question: "Czy często czujesz, że „masz dość”?",
-          answer: false
-        },
-        {
-          id: 27,
-          question: "Czy kiedykolwiek wziąłeś (wzięłaś) cos (choćby pinezkę lub guzik), co należało do kogoś innego?",
-          answer: false
-        },
-        {
-          id: 28,
-          question: "Czy lubisz często spędzać czas poza domem?",
-          answer: false
-        },
-        {
-          id: 29,
-          question: "Czy wolisz raczej postępować po swojemu niż działać zgodnie z przyjętymi zasadami?",
-          answer: false
-        },
-        {
-          id: 30,
-          question: "Czy lubisz ranić ludzi, których kochasz?",
-          answer: false
-        },
-        {
-          id: 31,
-          question: "Czy często gnębi cię poczucie winy?",
-          answer: false
-        },
-        {
-          id: 32,
-          question: "Czy czasami mówisz o rzeczach, o których nie masz pojęcia?",
-          answer: false
-        },
-        {
-          id: 33,
-          question: "Czy wolisz pytać czy spotykać się z ludźmi?",
-          answer: false
-        },
-        {
-          id: 34,
-          question: "Czy masz wrogów, którzy chcą ci zaszkodzić?",
-          answer: false
-        },
-        {
-          id: 35,
-          question: "Czy nazwałbyś (nazwałabyś) siebie osobą nerwową?",
-          answer: false
-        },
-        {
-          id: 36,
-          question: "Czy masz wielu przyjaciół?",
-          answer: false
-        },
-        {
-          id: 37,
-          question: "Czy lubisz kawały, które tak naprawdę mogą czasem sprawić komuś przykrość?",
-          answer: false
-        },
-        {
-          id: 38,
-          question: "Czy zamartwiasz się z byle powodu?",
-          answer: false
-        },
-        {
-          id: 39,
-          question: "Czy jako dziecko wykonywałeś (wykonywałaś) polecenia natychmiast i bez marudzenia?",
-          answer: false
-        },
-        {
-          id: 40,
-          question: "Czy nazwałbyś (nazwałabyś) siebie osobą beztroską?",
-          answer: false
-        },
-        {
-          id: 41,
-          question: "Czy dobre maniery i schludność mają dla ciebie duże znaczenie?",
-          answer: false
-        },
-        {
-          id: 42,
-          question: "Czy często postępowałeś (postępowałaś) wbrew woli rodziców?",
-          answer: false
-        },
-        {
-          id: 43,
-          question: "Czy martwisz się strasznymi rzeczami, które mogłyby się wydarzyć?",
-          answer: false
-        },
-        {
-          id: 44,
-          question: "Czy kiedykolwiek zniszczyłeś (zniszczyłaś) lub zgubiłeś (zgubiłaś) coś należącego do kogoś innego?",
-          answer: false
-        },
-        {
-          id: 45,
-          question: "Czy zazwyczaj przejmujesz inicjatywę, nawiązując nowe znajomości?",
-          answer: false
-        },
-        {
-          id: 46,
-          question: "Czy nazwałbyś (nazwałabyś) siebie osobą spiętą lub niespokojną?",
-          answer: false
-        },
-        {
-          id: 47,
-          question: "Czy w towarzystwie innych ludzi przeważnie milczysz?",
-          answer: false
-        },
-        {
-          id: 48,
-          question: "Czy sądzisz, że instytucja małżeństwa jest przeżytkiem i należy ją znieść?",
-          answer: false
-        },
-        {
-          id: 49,
-          question: "Czy zdarza ci się trochę przechwalać?",
-          answer: false
-        },
-        {
-          id: 50,
-          question: "Czy swobodniej niż większość ludzi traktujesz kwestie dobra i zła?",
-          answer: false
-        },
-        {
-          id: 51,
-          question: "Czy łatwo udaje ci się ożywić raczej nudne przyjęcie?",
-          answer: false
-        },
-        {
-          id: 52,
-          question: "Czy martwisz się o swoje zdrowie?",
-          answer: false
-        },
-        {
-          id: 53,
-          question: "Czy kiedykolwiek zdarzyło ci się powiedzieć o kimś coś złego albo złośliwego?",
-          answer: false
-        },
-        {
-          id: 54,
-          question: "Czy lubisz współpracować z innymi?",
-          answer: false
-        },
-        {
-          id: 55,
-          question: "Czy lubisz opowiadać przyjaciołom dowcipy?",
-          answer: false
-        },
-        {
-          id: 56,
-          question: "Czy większość rzeczy ma dla ciebie ten sam smak?",
-          answer: false
-        },
-        {
-          id: 57,
-          question: "Czy jako dziecko bywałeś (bywałaś) bezczelny (bezczelna) wobec rodziców?",
-          answer: false
-        },
-        {
-          id: 58,
-          question: "Czy lubisz przebywać wśród ludzi?",
-          answer: false
-        },
-        {
-          id: 59,
-          question: "Czy przejmujesz się, jeśli wiesz, że w twojej pracy są błędy?",
-          answer: false
-        },
-        {
-          id: 60,
-          question: "Czy cierpisz na bezsenność?",
-          answer: false
-        },
-        {
-          id: 61,
-          question: "Czy ludzie mówią ci, że czasami działasz zbyt pochopnie?",
-          answer: false
-        },
-        {
-          id: 62,
-          question: "Czy zawsze myjesz ręce przed posiłkiem?",
-          answer: false
-        },
-        {
-          id: 63,
-          question: "Czy rozmawiając z ludźmi prawie zawsze masz gotową odpowiedź?",
-          answer: false
-        },
-        {
-          id: 64,
-          question: "Czy na umówione spotkania lubisz przychodzić sporo wcześniej?",
-          answer: false
-        },
-        {
-          id: 65,
-          question: "Czy często czujesz się ospały (ospała) i zmęczony (zmęczona) bez powodu?",
-          answer: false
-        },
-        {
-          id: 66,
-          question: "Czy zdarzyło ci się oszukiwać w grze?",
-          answer: false
-        },
-        {
-          id: 67,
-          question: "Czy lubisz robić rzeczy wymagające od ciebie szybkiego działania?",
-          answer: false
-        },
-        {
-          id: 68,
-          question: "Czy twoja matka jest (była) dobrą kobietą?",
-          answer: false
-        },
-        {
-          id: 69,
-          question: "Czy często podejmujesz decyzje pod wpływem chwili?",
-          answer: false
-        },
-        {
-          id: 70,
-          question: "Czy często czujesz, że życie jest bardzo nudne?",
-          answer: false
-        },
-        {
-          id: 71,
-          question: "Czy zdarzyło ci się kiedyś wykorzystać kogoś?",
-          answer: false
-        },
-        {
-          id: 72,
-          question: "Czy często bierzesz na siebie więcej zajęć, niż pozwala ci na to czas?",
-          answer: false
-        },
-        {
-          id: 73,
-          question: "Czy są takie osoby, które starają się ciebie unikać?",
-          answer: false
-        },
-        {
-          id: 74,
-          question: "Czy bardzo przejmujesz się swoim wyglądem?",
-          answer: false
-        },
-        {
-          id: 75,
-          question: "Czy uważasz, że ludzie zbyt wiele czasu poświęcają na zabezpieczanie swojej przyszłości, oszczędzając i wykupując polisy?",
-          answer: false
-        },
-        {
-          id: 76,
-          question: "Czy kiedykolwiek chciałeś (chciałaś) nie żyć?",
-          answer: false
-        },
-        {
-          id: 77,
-          question: "Czy unikałbyś (unikałabyś) płacenia podatków, gdybyś miał (miała) pewność, że nie zostanie to wykryte?",
-          answer: false
-        },
-        {
-          id: 78,
-          question: "Czy potrafisz „rozkręcić” imprezę?",
-          answer: false
-        },
-        {
-          id: 79,
-          question: "Czy starasz się nie być dla ludzi niegrzeczny (niegrzeczna)?",
-          answer: false
-        },
-        {
-          id: 80,
-          question: "Czy zbyt długo przejmujesz się sytuacjami, które wprawiły cię w zakłopotanie?",
-          answer: false
-        },
-        {
-          id: 81,
-          question: "Czy zazwyczaj „myślisz dwa razy”, zanim coś zrobisz?",
-          answer: false
-        },
-        {
-          id: 82,
-          question: "Czy kiedykolwiek nalegałeś (nalegałaś), żeby coś było zrobione po twojemu?",
-          answer: false
-        },
-        {
-          id: 83,
-          question: "Czy twoje nerwy dają ci się we znaki?",
-          answer: false
-        },
-        {
-          id: 84,
-          question: "Czy często czujesz się samotny (samotna)?",
-          answer: false
-        },
-        {
-          id: 85,
-          question: "Czy na ogół wierzysz, że ludzie mówią prawdę?",
-          answer: false
-        },
-        {
-          id: 86,
-          question: "Czy zawsze postępujesz zgodnie z tym, co głosisz?",
-          answer: false
-        },
-        {
-          id: 87,
-          question: "Czy łatwo cię zranić, wytykając ci wady lub niedociągnięcia w twojej pracy?",
-          answer: false
-        },
-        {
-          id: 88,
-          question: "Czy lepiej jest przestrzegać reguł życia społecznego niż postępować według własnego uznania?",
-          answer: false
-        },
-        {
-          id: 89,
-          question: "Czy zdarzyło ci się kiedykolwiek spóźnić na spotkanie lub do pracy?",
-          answer: false
-        },
-        {
-          id: 90,
-          question: "Czy lubisz, kiedy wokół ciebie panuje zamieszanie i dzieje się wiele ekscytujących rzeczy?",
-          answer: false
-        },
-        {
-          id: 91,
-          question: "Czy chciałbyś (chciałabyś), aby inni ludzie się ciebie bali?",
-          answer: false
-        },
-        {
-          id: 92,
-          question: "Czy czasami kipisz energią, zaś innym razem jesteś bardzo ospały (ospała)?",
-          answer: false
-        },
-        {
-          id: 93,
-          question: "Czy czasami odkładasz do jutra to, co powinieneś (powinnaś) zrobić dzisiaj?",
-          answer: false
-        },
-        {
-          id: 94,
-          question: "Czy inni ludzie uważają cie za osobę bardzo energiczną?",
-          answer: false
-        },
-        {
-          id: 95,
-          question: "Czy ludzie często cię okłamują?",
-          answer: false
-        },
-        {
-          id: 96,
-          question: "Czy uważasz, że człowiek ma szczególne obowiązki wobec własnej rodziny",
-          answer: false
-        },
-        {
-          id: 97,
-          question: "Czy jesteś przewrażliwiony (przewrażliwiona) na jakimś punkcie?",
-          answer: false
-        },
-        {
-          id: 98,
-          question: "Czy zawsze jesteś skłonny (skłonna) przyznać się do popełnionego błędu?",
-          answer: false
-        },
-        {
-          id: 99,
-          question: "Czy byłoby ci żal zwierzęcia schwytanego w sidła?",
-          answer: false
-        },
-        {
-          id: 100,
-          question: "Czy gdy narasta w tobie gniew, trudno ci go opanować?",
-          answer: false
-        },
-        {
-          id: 101,
-          question: "Czy starannie zamykasz na noc drzwi swojego mieszkania?",
-          answer: false
-        },
-        {
-          id: 102,
-          question: "Czy uważasz, że polisy ubezpieczeniowe to dobry pomysł?",
-          answer: false
-        },
-        {
-          id: 103,
-          question: "Czy irytują cię kierowcy, którzy ostrożnie jeżdżą?",
-          answer: false
-        },
-        {
-          id: 104,
-          question: "Czy często przychodzisz na pociąg w ostatniej chwili?",
-          answer: false
-        },
-        {
-          id: 105,
-          question: "Czy twoje przyjaźnie łatwo rozpadają się bez twojej winy?",
-          answer: false
-        },
-        {
-          id: 106,
-          question: "Czy czasami lubisz drażnić zwierzęta?",
-          answer: false
-        }
-      ]
-    </script>
-    <script>
-      const form = document.getElementById('form');
-      const list = document.createElement('ol');
-
-      list.classList.add('list');
-
-      form.appendChild(list);
-
-      data.map(item => {
-        const html = `<li class="list-item">
-          <div class="qestion" id="q${item.id}">${item.question}</div>
-          <div class="answer" >
-              <input type="radio" id="question${item.id}choice1" name="question${item.id}"  required>
-              <label for="question${item.id}choice1">NIE</label>
-
-              <input type="radio" id="question${item.id}choice2" name="question${item.id}" required>
-              <label for="question${item.id}choice2">Tak</label>
+      <main>
+        <section>
+          <h3>Wybierz grupę:</h3>
+          <div class="group-select">
+            <div class="age-group">
+              <select name="people-group" id="people-group">
+                <option value="students">Studenci</option>
+                <option value="emerits">Emeryci</option>
+                <option value="grow">Doreśli</option>
+              </select></div>
+            <div class="gender">
+              <input type="radio" name="gender" id="male" value="male" checked>
+              <label for="male">męszczyźni</label>
+              <input type="radio" name="gender" id="female" value="female">
+              <label for="female">kobiety</label>
+            </div>
           </div>
-        </li>`
+        </section>
+        <section>
+          <h3>Zaznacz odpowiedzi:</h3>
+          <div class="answers">
+          </div>
+          <div class="legend">
+            <span>* klikając na jakąś odpowiedź masz do wyboru:</span>
+            <span class="yes">- tak</span>
+            <span class="no">- nie</span>
+            <span class="default">- nie zaznaczono</span>
+          </div>
+          <div class="buttons">
+            <button id="result">Oblicz</button><button id="reset">Resetuj</button>
+          </div>
+        </section>
+        <section class="previev">
+          <h3>Podgląd:</h3>
+          <div class="container">
+            <div>
+              <h4>Psyhotyzm</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="psyhotyzm-positive"></ul>
+                </ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="psyhotyzm-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Neurotyczność</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="neuroticism-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="neuroticism-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Ekstrawersja</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="extroversion-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="extroversion-negative"></ul>
+              </div>
+            </div>
+            <div>
+              <h4>Skala kłamstwa</h4>
+              <div>
+                <span>Tak</span>
+                <ul class="lie-positive"></ul>
+              </div>
+              <div>
+                <span>Tak</span>
+                <ul class="lie-negative"></ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
 
-        list.innerHTML += html;
-      })
-    </script> -->
+
+
+
+      <script src="main.js">
+
+
+
+      </script>
+    </div>
   </body>
 
 </html>
