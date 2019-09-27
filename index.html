@@ -24,10 +24,10 @@
           <div class="group-select">
             <div class="age-group">
               <select name="people-group" id="people-group">
-                <option value="students">Studenci</option>
-                <option value="group2">Grupa 2</option>
-                <option value="group3">Grupa 3</option>
-                <option value="group4">Grupa 4</option>
+                <option value="students" selected>Studenci</option>
+                <option value="group2" disabled>Grupa 2</option>
+                <option value="group3" disabled>Grupa 3</option>
+                <option value="group4" disabled>Grupa 4</option>
               </select></div>
             <div class="gender">
               <input type="radio" name="gender" id="male" value="male" checked>
@@ -97,6 +97,66 @@
             </div>
           </div>
         </section>
+        <div class="result-box">
+          <div class="content">
+            <h2>Wyniki dla <span class="gender">męszczyzn</span> z grupu "<span class="group">studenci</span>"</h2>
+            <button class="close-results"></button>
+            <div class="boxes">
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Psychotyzm</h3>
+                </div>
+                <div class="wrapper">
+                  <span>Wynik surowy</span>
+                  <span>Steny</span>
+                </div>
+                <div class="wrapper">
+                  <span data-type="rawPsyhoResult">0</span>
+                  <span data-type="stenPsyhoResult">0</span>
+                </div>
+              </div>
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Ekstrawersja</h3>
+                </div>
+                <div class="wrapper">
+                  <span>Wynik surowy</span>
+                  <span>Steny</span>
+                </div>
+                <div class="wrapper">
+                  <span data-type="rawExtroResult">0</span>
+                  <span data-type="stenExtroResult">0</span>
+                </div>
+              </div>
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Neurotyczność</h3>
+                </div>
+                <div class="wrapper">
+                  <span>Wynik surowy</span>
+                  <span>Steny</span>
+                </div>
+                <div class="wrapper">
+                  <span data-type="rawNeuroResult">0</span>
+                  <span data-type="stenNeuroResult">0</span>
+                </div>
+              </div>
+              <div class="box">
+                <div class="wrapper">
+                  <h3>Skala kłamstwa</h3>
+                </div>
+                <div class="wrapper">
+                  <span>Wynik surowy</span>
+                  <span>Steny</span>
+                </div>
+                <div class="wrapper">
+                  <span data-type="rawLieResult">0</span>
+                  <span data-type="stenLieResult">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
 

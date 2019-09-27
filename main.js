@@ -192,6 +192,7 @@ const stens = {
 
 const answers = (JSON.parse(localStorage.getItem('answers'))) || defaultAnswers();
 
+//preveiw boxes
 const answersDiv = document.querySelector('.answers'),
   psyhoPosDiv = document.querySelector('.psyhotyzm-positive'),
   psyhoNegDiv = document.querySelector('.psyhotyzm-negative'),
@@ -202,8 +203,12 @@ const answersDiv = document.querySelector('.answers'),
   liePosDiv = document.querySelector('.lie-positive'),
   lieNegDiv = document.querySelector('.lie-negative');
 
-const resultBtn = document.getElementById('result');
+//btns
 const resetBtn = document.getElementById('reset');
+const resultBtn = document.getElementById('result');
+
+//results boxes
+const resultBox = document.querySelector('.result-box');
 
 const calculateAnswers = array => {
   return [{
@@ -287,7 +292,6 @@ const displayResult = (arr) => {
 
   console.log(group, gender);
 
-
   const rawPsyhoResult = [...arr.filter(item => item.group === 'psyhotyzm')[0].items, ...arr.filter(item => item.group === 'psyhotyzm')[1].items].length;
 
   const rawExtroResult = [...arr.filter(item => item.group === 'extroversion')[0].items, ...arr.filter(item => item.group === 'extroversion')[1].items].length;
@@ -301,6 +305,9 @@ const displayResult = (arr) => {
 
 
   // console.log('psyhotyzm: ' + rawPsyhoResult, '\nextroversion: ' + rawExtroResult, '\nneuroticism: ' + rawNeuroResult, '\nlie: ' + rawLieResult);
+
+  resultBox.classList.add('visible');
+  document.body.classList.add('no-scroll')
 }
 
 const resetAnswers = array => {
@@ -315,6 +322,21 @@ const resetAnswers = array => {
   render(array);
 }
 
+const closeResultBox = e => {
+  if (e.target === resultBox || e.target.classList.contains('close-results')) {
+    resultBox.classList.remove('visible');
+    document.body.classList.remove('no-scroll')
+  }
+}
+
 answersDiv.addEventListener('click', changeAnswer);
 resultBtn.addEventListener('click', () => displayResult(calculateAnswers(answers)));
 resetBtn.addEventListener('click', () => resetAnswers(answers));
+
+
+// document.querySelector('.close-results').addEventListener('click', ({
+//   target
+// }) => target)
+
+resultBox.addEventListener('click', closeResultBox)
+resultBox.addEventListener('touchstart', closeResultBox)
