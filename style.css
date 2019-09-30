@@ -3,13 +3,13 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   text-align: center;
 }
 
@@ -18,19 +18,20 @@ body.no-scroll {
 }
 
 .app {
-  width: 90vw;
+  width: 93vw;
   max-width: 800px;
   margin: 30px auto;
   padding-bottom: 60px;
 }
 
 .app h1 {
-  font-size: 40px;
+  font-size: 27px;
   font-weight: 600;
   letter-spacing: -1px;
 }
 
 .app .test-info {
+  display: none;
   color: red;
   margin: -5px 0;
   font-size: 14px;
@@ -45,13 +46,13 @@ body.no-scroll {
   position: relative;
   display: inline-block;
   margin-bottom: 18px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
 }
 
 .app section h3::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -7px;
   left: 0;
@@ -68,12 +69,21 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 16px;
+}
+
+.app section .group-select .age-group {
+  margin: 15px 0 20px 0;
 }
 
 .app section .group-select .age-group select {
-  width: 190px;
-  padding: 10px 20px;
-  font-size: 15px;
+  font-size: 1em;
+  width: 15em;
+  padding: 0.7em 1.3em;
   font-weight: 300;
 }
 
@@ -84,14 +94,23 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1em;
 }
 
 .app section .group-select .gender input {
-  margin: 6px 10px auto 50px;
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0.1em 1.1em auto 0;
+}
+
+.app section .group-select .gender input:last-of-type {
+  margin-left: 1.1em;
 }
 
 .app section .group-select .gender label {
-  font-size: 15px;
   font-weight: 300;
 }
 
@@ -116,24 +135,26 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 12px;
-  width: 2.9em;
-  height: 2.9em;
-  margin: 5px;
-  font-weight: 600;
+  font-size: 14px;
+  width: 3em;
+  height: 3em;
+  margin: 4px;
+  font-weight: 500;
   border-radius: 50%;
   border: none;
   background-color: white;
   background-position: -50% 0;
   cursor: pointer;
   will-change: transform;
-  -webkit-transition: .15s transform ease-in-out;
-  transition: .15s transform ease-in-out;
+  -webkit-transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s transform ease-in-out;
+  transition: 0.15s transform ease-in-out, 0.15s -webkit-transform ease-in-out;
   position: relative;
 }
 
 .app section .answers button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -143,8 +164,8 @@ body.no-scroll {
           box-shadow: 0 0.8em 10px -0.5em rgba(0, 0, 0, 0.1);
   border-radius: inherit;
   will-change: opacity;
-  -webkit-transition: .2s opacity ease-in-out;
-  transition: .2s opacity ease-in-out;
+  -webkit-transition: 0.2s opacity ease-in-out;
+  transition: 0.2s opacity ease-in-out;
 }
 
 .app section .answers button:hover {
@@ -153,12 +174,12 @@ body.no-scroll {
 }
 
 .app section .answers button:hover::before {
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .app section .answers button.yes {
   color: white;
-  background: radial-gradient(ellipse at top, #2FE663, #11998E);
+  background: radial-gradient(ellipse at top, #2fe663, #11998e);
 }
 
 .app section .answers button.yes:focus {
@@ -167,7 +188,7 @@ body.no-scroll {
 
 .app section .answers button.no {
   color: white;
-  background: radial-gradient(ellipse at top, #ED213A, #93291E);
+  background: radial-gradient(ellipse at top, #ed213a, #93291e);
 }
 
 .app section .answers button.no:focus {
@@ -176,7 +197,7 @@ body.no-scroll {
 
 .app section .answers button.default {
   color: #222;
-  background: radial-gradient(ellipse at top, #FDFBFB, #EBEDEE);
+  background: radial-gradient(ellipse at top, #fdfbfb, #ebedee);
 }
 
 .app section .answers button.default:focus {
@@ -187,11 +208,11 @@ body.no-scroll {
   position: relative;
   margin-top: 18px;
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .app section .legend::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -5px;
   left: 0;
@@ -199,10 +220,14 @@ body.no-scroll {
   width: 50%;
 }
 
+.app section .legend span:first-of-type {
+  display: block;
+}
+
 .app section .legend .yes::before,
 .app section .legend .no::before,
 .app section .legend .default::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 1.4em;
   height: 1.4em;
@@ -214,15 +239,15 @@ body.no-scroll {
 }
 
 .app section .legend .yes::before {
-  background-image: radial-gradient(ellipse at top, #2FE663, #11998E);
+  background-image: radial-gradient(ellipse at top, #2fe663, #11998e);
 }
 
 .app section .legend .no::before {
-  background-image: radial-gradient(ellipse at top, #ED213A, #93291E);
+  background-image: radial-gradient(ellipse at top, #ed213a, #93291e);
 }
 
 .app section .legend .default::before {
-  background-image: radial-gradient(ellipse at top, #FDFBFB, #EBEDEE);
+  background-image: radial-gradient(ellipse at top, #fdfbfb, #ebedee);
 }
 
 .app section .buttons {
@@ -240,24 +265,26 @@ body.no-scroll {
 }
 
 .app section .buttons button {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0.3em 2em;
   color: white;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00D2DF), to(#001A9F));
-  background-image: linear-gradient(#00D2DF, #001A9F);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d2df), to(#001a9f));
+  background-image: linear-gradient(#00d2df, #001a9f);
   border: none;
   border-radius: 60px;
   -webkit-box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
           box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.1), 0 10px 10px -10px rgba(0, 0, 0, 0.1), 0 5px 5px -4px rgba(0, 0, 0, 0.2), 0 2px 3px -2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   will-change: transform;
-  -webkit-transition: .15s transform ease-in-out;
-  transition: .15s transform ease-in-out;
+  -webkit-transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s -webkit-transform ease-in-out;
+  transition: 0.15s transform ease-in-out;
+  transition: 0.15s transform ease-in-out, 0.15s -webkit-transform ease-in-out;
   position: relative;
 }
 
 .app section .buttons button::before {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   width: 100%;
@@ -269,13 +296,13 @@ body.no-scroll {
           box-shadow: inset 0 20px 20px -15px black;
   opacity: 0;
   will-change: opacity;
-  -webkit-transition: .15s opacity ease-in-out;
-  transition: .15s opacity ease-in-out;
+  -webkit-transition: 0.15s opacity ease-in-out;
+  transition: 0.15s opacity ease-in-out;
 }
 
 .app section .buttons button#reset {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#FC5D5D), to(#7D0000));
-  background-image: linear-gradient(#FC5D5D, #7D0000);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fc5d5d), to(#7d0000));
+  background-image: linear-gradient(#fc5d5d, #7d0000);
   margin-left: 20px;
 }
 
@@ -285,7 +312,7 @@ body.no-scroll {
 }
 
 .app section .buttons button:hover::before, .app section .buttons button:focus::before {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .app .previev .container {
@@ -300,7 +327,7 @@ body.no-scroll {
 }
 
 .app .previev .container > div {
-  margin: 5px;
+  margin: 5px 0;
   padding: 8px;
   width: 100%;
   border: 1px solid rgba(112, 112, 112, 0.15);
@@ -364,11 +391,11 @@ body.no-scroll {
 }
 
 .app .previev .container > div div ul li.yes {
-  background-image: radial-gradient(ellipse at top, #2FE663, #11998E);
+  background-image: radial-gradient(ellipse at top, #2fe663, #11998e);
 }
 
 .app .previev .container > div div ul li.no {
-  background-image: radial-gradient(ellipse at top, #ED213A, #93291E);
+  background-image: radial-gradient(ellipse at top, #ed213a, #93291e);
 }
 
 .app .result-box {
@@ -378,20 +405,20 @@ body.no-scroll {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   max-width: 930px;
-  width: 95%;
+  width: 97%;
   color: black;
   z-index: 20;
   opacity: 0;
   pointer-events: none;
   will-change: opacity;
-  -webkit-transition: .2s opacity ease-in;
-  transition: .2s opacity ease-in;
+  -webkit-transition: 0.2s opacity ease-in;
+  transition: 0.2s opacity ease-in;
 }
 
 .app .result-box.visible {
   opacity: 1;
   pointer-events: all;
-  max-height: 95vh;
+  max-height: 98vh;
 }
 
 .app .result-box.visible .content {
@@ -399,11 +426,11 @@ body.no-scroll {
           transform: scale(1);
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 95vh;
+  max-height: 98vh;
 }
 
 .app .result-box::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -413,7 +440,7 @@ body.no-scroll {
   height: 101vh;
   background: #000;
   z-index: -1;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .app .result-box .content {
@@ -422,56 +449,57 @@ body.no-scroll {
   height: 100%;
   padding: 10px;
   background: #fff;
-  border-radius: 13px;
+  border-radius: 5px;
   -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
   will-change: transform;
-  -webkit-transition: .2s transform ease-in;
-  transition: .2s transform ease-in;
+  -webkit-transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s -webkit-transform ease-in;
+  transition: 0.2s transform ease-in;
+  transition: 0.2s transform ease-in, 0.2s -webkit-transform ease-in;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
 .app .result-box .content h2 {
   display: inline-block;
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 500;
   padding: 0.6em 1.2em;
-  border: rgba(0, 0, 0, 0.05) solid 1px;
-  -webkit-box-shadow: 0 7px 15px -5px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 7px 15px -5px rgba(0, 0, 0, 0.05);
-  margin: 10px 0 10px 0;
+  margin: 10px 0 0 0;
   border-radius: 14px;
 }
 
 .app .result-box .content .close-results {
   position: absolute;
   font-size: 10px;
-  right: .5em;
-  top: .5em;
+  right: 0.5em;
+  top: 0.5em;
   width: 5em;
   height: 5em;
   background: transparent;
   border: none;
   cursor: pointer;
   will-change: transform;
-  -webkit-transition: .3s .3s transform ease-out;
-  transition: .3s .3s transform ease-out;
+  -webkit-transition: 0.3s 0.3s transform ease-out;
+  transition: 0.3s 0.3s transform ease-out;
 }
 
 .app .result-box .content .close-results::before, .app .result-box .content .close-results::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 50%;
   top: 50%;
   -webkit-transform: translate(50%, -50%) rotate(45deg);
           transform: translate(50%, -50%) rotate(45deg);
   width: 65%;
-  height: .2em;
+  height: 0.3em;
   background: #000;
   will-change: transform;
-  -webkit-transition: .3s transform ease-out;
-  transition: .3s transform ease-out;
+  -webkit-transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s transform ease-out;
+  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
 }
 
 .app .result-box .content .close-results::before {
@@ -480,15 +508,17 @@ body.no-scroll {
 }
 
 .app .result-box .content .close-results:hover, .app .result-box .content .close-results:focus {
-  -webkit-transition: .3s transform ease-out;
-  transition: .3s transform ease-out;
+  -webkit-transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s -webkit-transform ease-out;
+  transition: 0.3s transform ease-out;
+  transition: 0.3s transform ease-out, 0.3s -webkit-transform ease-out;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 .app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:hover::after, .app .result-box .content .close-results:focus::before, .app .result-box .content .close-results:focus::after {
-  -webkit-transition: .3s .3s transform ease-out;
-  transition: .3s .3s transform ease-out;
+  -webkit-transition: 0.3s 0.3s transform ease-out;
+  transition: 0.3s 0.3s transform ease-out;
 }
 
 .app .result-box .content .close-results:hover::before, .app .result-box .content .close-results:focus::before {
@@ -517,12 +547,12 @@ body.no-scroll {
 
 .app .result-box .content .boxes .box {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 47%;
-          flex: 1 1 47%;
-  margin: 10px;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin: 10px 0;
   padding: 7.5px;
-  -webkit-box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
 .app .result-box .content .boxes .box .wrapper {
@@ -535,7 +565,7 @@ body.no-scroll {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50px;
+  height: 35px;
 }
 
 .app .result-box .content .boxes .box .wrapper:first-child {
@@ -543,10 +573,10 @@ body.no-scroll {
 }
 
 .app .result-box .content .boxes .box .wrapper h3 {
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 500;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 .app .result-box .content .boxes .box span {
@@ -555,12 +585,12 @@ body.no-scroll {
           flex: 1;
   -webkit-box-shadow: 0 0 0 1px #e6e6e6;
           box-shadow: 0 0 0 1px #e6e6e6;
-  line-height: 50px;
+  line-height: 35px;
   background: #fff;
 }
 
 .app .result-box .content .boxes .box:nth-of-type(1) .wrapper:first-child {
-  background: linear-gradient(130deg, #673AB7 0%, #9C27B0 100%);
+  background: linear-gradient(130deg, #673ab7 0%, #9c27b0 100%);
 }
 
 .app .result-box .content .boxes .box:nth-of-type(2) .wrapper:first-child {
@@ -573,5 +603,114 @@ body.no-scroll {
 
 .app .result-box .content .boxes .box:nth-of-type(4) .wrapper:first-child {
   background: linear-gradient(130deg, #005bea 0%, #00c6fb 100%);
+}
+
+@media screen and (min-width: 420px) {
+  .app section .answers button {
+    width: 4em;
+    height: 4em;
+  }
+  .app .result-box .content .boxes .box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 65vw;
+            flex: 0 1 65vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .app h1 {
+    font-size: 32px;
+  }
+  .app section h3 {
+    font-size: 20px;
+  }
+  .app section .group-select {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .app section .group-select .age-group {
+    margin-right: 50px;
+  }
+  .app section .group-select .gender input {
+    margin: 0.3em 1.1em 0 0;
+  }
+  .app section .buttons button {
+    font-size: 18px;
+  }
+  .app .result-box .content {
+    padding: 10px;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+  .app .result-box .content .boxes .box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50vw - 44px);
+            flex: 0 1 calc(50vw - 44px);
+    margin: 10px;
+    max-width: 300px;
+    margin: 10px;
+    padding: 7.5px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .app h1 {
+    font-size: 34px;
+  }
+  .app section .legend {
+    font-size: 14px;
+  }
+  .app section.previev .container > div h4 {
+    font-size: 18px;
+  }
+  .app section.previev .container > div div span {
+    font-size: 13px;
+  }
+  .app section.previev .container > div div ul li {
+    font-size: 13px;
+  }
+  .app section .buttons button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .app h1 {
+    font-size: 40px;
+  }
+  .app .result-box .content {
+    padding: 20px;
+    max-width: 930px;
+    margin: 0 auto;
+  }
+  .app .result-box .content h2 {
+    font-size: 25px;
+  }
+  .app .result-box .content .boxes .box {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 calc(50vw - 80px);
+            flex: 0 1 calc(50vw - 80px);
+    margin: 10px;
+    max-width: 400px;
+    margin: 20px;
+    padding: 15px;
+  }
+  .app .result-box .content .boxes .box .wrapper {
+    height: 50px;
+  }
+  .app .result-box .content .boxes .box .wrapper h3 {
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .app .result-box .content .boxes .box .wrapper span {
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
