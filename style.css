@@ -11,6 +11,7 @@
 body {
   font-family: "poppins", sans-serif;
   text-align: center;
+  background-color: #f5f5f5;
 }
 
 body.no-scroll {
@@ -85,6 +86,11 @@ body.no-scroll {
   width: 15em;
   padding: 0.7em 1.3em;
   font-weight: 300;
+  cursor: pointer;
+}
+
+.app section .group-select .age-group select option {
+  cursor: pointer;
 }
 
 .app section .group-select .gender {
@@ -104,6 +110,7 @@ body.no-scroll {
   width: 1.5em;
   height: 1.5em;
   margin: 0.1em 1.1em auto 0;
+  cursor: pointer;
 }
 
 .app section .group-select .gender input:last-of-type {
@@ -112,6 +119,7 @@ body.no-scroll {
 
 .app section .group-select .gender label {
   font-weight: 300;
+  cursor: pointer;
 }
 
 .app section .answers {
@@ -142,7 +150,6 @@ body.no-scroll {
   font-weight: 500;
   border-radius: 50%;
   border: none;
-  background-color: white;
   background-position: -50% 0;
   cursor: pointer;
   will-change: transform;
@@ -169,8 +176,8 @@ body.no-scroll {
 }
 
 .app section .answers button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 
 .app section .answers button:hover::before {
@@ -179,7 +186,7 @@ body.no-scroll {
 
 .app section .answers button.yes {
   color: white;
-  background: radial-gradient(ellipse at top, #2fe663, #11998e);
+  background: radial-gradient(ellipse at top, #37c960, #0f7068);
 }
 
 .app section .answers button.yes:focus {
@@ -197,7 +204,7 @@ body.no-scroll {
 
 .app section .answers button.default {
   color: #222;
-  background: radial-gradient(ellipse at top, #fdfbfb, #ebedee);
+  background: radial-gradient(ellipse at top, #ffffff, #f7f7f7);
 }
 
 .app section .answers button.default:focus {
@@ -239,7 +246,7 @@ body.no-scroll {
 }
 
 .app section .legend .yes::before {
-  background-image: radial-gradient(ellipse at top, #2fe663, #11998e);
+  background-image: radial-gradient(ellipse at top, #37c960, #0f7068);
 }
 
 .app section .legend .no::before {
@@ -247,7 +254,7 @@ body.no-scroll {
 }
 
 .app section .legend .default::before {
-  background-image: radial-gradient(ellipse at top, #fdfbfb, #ebedee);
+  background-image: radial-gradient(ellipse at top, #ffffff, #f7f7f7);
 }
 
 .app section .buttons {
@@ -334,6 +341,7 @@ body.no-scroll {
   -webkit-box-shadow: 0 8px 20px -15px rgba(0, 0, 0, 0.2);
           box-shadow: 0 8px 20px -15px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
+  background-color: #fff;
 }
 
 .app .previev .container > div h4 {
@@ -343,8 +351,8 @@ body.no-scroll {
   font-weight: 300;
   letter-spacing: 3px;
   color: #222;
-  -webkit-box-shadow: 0 4px 6px -5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 6px -5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.1);
 }
 
 .app .previev .container > div div {
@@ -391,7 +399,7 @@ body.no-scroll {
 }
 
 .app .previev .container > div div ul li.yes {
-  background-image: radial-gradient(ellipse at top, #2fe663, #11998e);
+  background-image: radial-gradient(ellipse at top, #37c960, #0f7068);
 }
 
 .app .previev .container > div div ul li.no {
@@ -641,6 +649,9 @@ body.no-scroll {
   }
   .app section .buttons button {
     font-size: 18px;
+  }
+  .app section .legend span:first-of-type {
+    display: inline;
   }
   .app .result-box .content {
     padding: 10px;
