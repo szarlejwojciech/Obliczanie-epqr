@@ -170,8 +170,7 @@ const resultBox = document.querySelector(".result-box"),
   titleGroup = resultBox.querySelector("span.group");
 
 const calculateAnswers = array => {
-  return [
-    {
+  return [{
       items: array.filter(
         item => item.type === "psyhotyzm-yes" && item.answer === "yes"
       ),
@@ -231,9 +230,9 @@ const calculateAnswers = array => {
 const renderPreview = array => {
   array.map(
     el =>
-      (el.divName.innerHTML = el.items
-        .map(item => `<li class="${item.className}">${item.id}</li>`)
-        .join(""))
+    (el.divName.innerHTML = el.items
+      .map(item => `<li class="${item.className}">${item.id}</li>`)
+      .join(""))
   );
 };
 
@@ -241,7 +240,7 @@ const render = array => {
   answersDiv.innerHTML = array
     .map(
       item =>
-        `<button class="${item.className}" data-id="${item.id}" data-type="${item.type}" data-answer="${item.answer}" >${item.id}</button>`
+      `<button class="${item.className}" data-id="${item.id}" data-type="${item.type}" data-answer="${item.answer}" >${item.id}</button>`
     )
     .join("");
   const newArray = calculateAnswers(array);

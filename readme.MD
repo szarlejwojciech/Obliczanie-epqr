@@ -1,3 +1,3 @@
-### Oblicanie EPQ-----------
+# Oblicanie EPQ-----------
 
-# Aplikacja oblczająca EPQ-----------
+### Aplikacja oblczająca EPQ-----------

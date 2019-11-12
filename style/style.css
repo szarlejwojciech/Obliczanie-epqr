@@ -31,13 +31,6 @@ body.no-scroll {
   letter-spacing: -1px;
 }
 
-.app .test-info {
-  display: none;
-  color: red;
-  margin: -5px 0;
-  font-size: 14px;
-}
-
 .app section {
   margin: 15px 0;
   text-align: left;
